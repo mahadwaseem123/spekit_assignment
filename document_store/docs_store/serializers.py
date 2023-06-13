@@ -9,8 +9,8 @@ class TopicSerializer(serializers.ModelSerializer):
 
 
 class FolderSerializer(serializers.ModelSerializer):
-    #child_folders = serializers.StringRelatedField(many=True)
-    #documents = serializers.StringRelatedField(many=True)
+    children = serializers.StringRelatedField(many=True)
+    documents = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Folder
@@ -18,6 +18,7 @@ class FolderSerializer(serializers.ModelSerializer):
 
 
 class DocumentSerializer(serializers.ModelSerializer):
+    topics = TopicSerializer(many=True, read_only=True)
     class Meta:
         model = Document
         fields = '__all__'
