@@ -1,4 +1,4 @@
-# spekit_assignment
+# Docs Store
 
 Setup
 
