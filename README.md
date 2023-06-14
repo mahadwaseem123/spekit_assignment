@@ -1,19 +1,17 @@
 # Docs Store
 
-# Setup
+Setup:
 
-# Steps:
-
-# -Update the System
+# Update the System
 sudo apt-get update
 
-# -To get this repository, run the following command inside your git enabled terminal
+# To get this repository, run the following command inside your git enabled terminal
 git clone https://github.com/mahadwaseem123/spekit_assignment.git
 
-# -Install pip
+# Install pip
 sudo apt install python3-pip -y
 
-# -Run this command to install dependencies
+# Run this command to install dependencies
 pip install -r requirements.txt
 
 Once you have downloaded django,Python3 and all dependencies from requirements.txt, go to the cloned repo directory and run the following command
