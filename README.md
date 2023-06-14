@@ -1,6 +1,4 @@
-# Docs Store System
-
-# Setup Steps:
+# Setup:
 
 # Update the System
 sudo apt-get update
