@@ -41,6 +41,12 @@ INSTALLED_APPS = [
     'docs_store',
 ]
 
+'''REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'docs_store.customauth.custauth.BasicAuthentication',
+    ),
+}'''
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

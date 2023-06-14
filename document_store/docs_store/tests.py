@@ -1,9 +1,26 @@
 from django.test import TestCase
 from rest_framework.test import APITestCase, RequestsClient
+from django.contrib.auth.models import User
 
 from .models import Topic, Document, Folder
 from .serializers import DocumentSerializer, TopicSerializer, FolderSerializer
 import base64
+
+# test login
+
+
+class LoginTestCase(APITestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.client = RequestsClient()
+
+    def setUp(self):
+        User.objects.create_user(username='testuser', password='12345')
+
+    def test_login(self):
+        logged_in = self.client.login(username='testuser', password='12345')
+        self.assertTrue(logged_in)
 
 
 class ListFoldersTestCase(APITestCase):
@@ -75,7 +92,6 @@ class GetDocumentsWithTopicInFolderTestCase(APITestCase):
         document3.topics.add(Topic.objects.create(short_desc='Other Topic', long_desc='Other Long description'))
 
         # make API request
-
 
         response = self.client.get('/documents/', {'folder': 'CustomerFeedback!', 'topic': 'SpekiLove!'})
 

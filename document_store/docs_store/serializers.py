@@ -10,7 +10,7 @@ class TopicSerializer(serializers.ModelSerializer):
 
 class FolderSerializer(serializers.ModelSerializer):
     children = serializers.StringRelatedField(many=True)
-    documents = serializers.StringRelatedField(many=True)
+    #documents = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Folder
